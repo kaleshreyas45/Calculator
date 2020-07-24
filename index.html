@@ -155,10 +155,12 @@
         var button = document.querySelectorAll('.btn');
          console.log(button);
         var text = document.getElementById('text');
+       
         var str = "";
+
         for(elem of button){
         elem.addEventListener('click', (e) => {
-            
+           
             str = str + e.target.innerText;
             text.value = str;
                console.log(str);
@@ -173,8 +175,16 @@
             str = ""
             text.value = "";
         })
+        document.addEventListener('keydown', function(event) {
+    if(event.keyCode == 8) {
+             str = ""
+            text.value = "";
+    }
+   
+});
         }
-      
+        
+        
     </script>
 </body>
 
